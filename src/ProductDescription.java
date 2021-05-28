@@ -9,6 +9,10 @@ public class ProductDescription {
         this.price = price;
     }
 
+    public ProductDescription() {
+
+    }
+
     public String getID() {
         return ID;
     }

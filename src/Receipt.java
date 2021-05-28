@@ -1,4 +1,7 @@
+import java.text.DecimalFormat;
+
 public class Receipt implements IReceipt{
+    private DecimalFormat df = new DecimalFormat("#.##");
     private String str;
     @Override
     public void print(Sale s) {
@@ -6,8 +9,8 @@ public class Receipt implements IReceipt{
         writeToTxt();
     }
     private void transToString(Sale s){
-        str = "TotalPayment:" +s.getTotal() + "\n";
-        str += (s.getBalance()<0)?"Payment Accomplished":"Balance:" + s.getBalance();
+        str = "TotalPayment:" +df.format(s.getTotal()) + "\n";
+        str += (s.getBalance()<0)?"Payment Accomplished":"Balance:" + df.format(s.getBalance());
 
     }
     private void writeToTxt(){
